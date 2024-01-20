@@ -43,8 +43,8 @@
       </div>
 
       <div class="col">
-        <div class="bar bg-purple" />
-        <div class="bar bg-purple-50" />
+        <div class="bar bg-alternative" />
+        <div class="bar bg-alternative-50" />
       </div>      
     </div>
 
@@ -59,7 +59,7 @@
         <div class="mt-2 text-base-medium-uppercase">{{ text }}</div>
         <div class="mt-2 text-sm-medium-uppercase">{{ text }}</div>
         <div class="mt-2 text-xs-medium-uppercase">{{ text }}</div>
-        
+
         <div class="mt-2 text-lg-medium">{{ text }}</div>
         <div class="mt-2 text-base-medium">{{ text }}</div>
         <div class="mt-2 text-sm-medium">{{ text }}</div>
@@ -72,8 +72,111 @@
         <div class="mt-2 text-xxs-regular">{{ text }}</div>
       </div>
     </div>
+
+    <div class="block inputs">
+      <div class="col">
+        <Input
+          v-model="name"
+          label="Фамилия Имя Отчество"
+        />
+
+        <Input
+          v-model="name"
+          class="mt-4"
+          label="Фамилия Имя Отчество"
+          readonly
+        />
+
+        <Input
+          v-model="name"
+          class="mt-4"
+          label="Фамилия Имя Отчество"
+          disabled
+        />
+
+        <Input
+          v-model="name"
+          class="mt-4 mb-2"
+          label="Фамилия Имя Отчество"
+          error="Текст ошибки"
+        />
+      </div>
+
+      <div class="col">
+        <Input
+          v-model="name"
+          class="mt-2"
+          label="Фамилия Имя Отчество"
+          sm
+        />
+
+        <Input
+          v-model="name"
+          class="mt-6"
+          label="Фамилия Имя Отчество"
+          readonly
+          sm
+        />
+
+        <Input
+          v-model="name"
+          class="mt-6"
+          label="Фамилия Имя Отчество"
+          disabled
+          sm
+        />
+
+        <Input
+          v-model="name"
+          class="mt-6 mb-2"
+          label="Фамилия Имя Отчество"
+          error="Текст ошибки"
+          sm
+        />
+      </div>
+
+      <div class="col">
+        <Input
+          v-model="name"
+          class="mt-4"
+          label="Фамилия Имя Отчество"
+          xs
+        />
+
+        <Input
+          v-model="name"
+          class="mt-8"
+          label="Фамилия Имя Отчество"
+          readonly
+          xs
+        />
+
+        <Input
+          v-model="name"
+          class="mt-8"
+          label="Фамилия Имя Отчество"
+          disabled
+          xs
+        />
+
+        <Input
+          v-model="name"
+          class="mt-8 mb-2"
+          label="Фамилия Имя Отчество"
+          error="Текст ошибки"
+          xs
+        />
+      </div>
+    </div>
   </div>
 </template>
+
+<script setup lang="ts">
+
+const text = 'Съешь ещё этих мягких французских булок, да выпей чаю';
+const name = ref('Иванов Иван Иванович');
+
+</script>
 
 <style setup lang="scss">
 
@@ -81,7 +184,7 @@
     .block {
       display: flex;
       flex-direction: row;
-      margin-top: 12px;
+      margin-top: 20px;
 
       .col {
         display: flex;
@@ -94,7 +197,6 @@
           &.with-border {
             border: 1px solid;
             @apply border-black;
-
           }
         }
 
@@ -110,8 +212,3 @@
   }
 
 </style>
-
-<script setup lang="ts">
-  const text = 'Съешь ещё этих мягких французских булок, да выпей чаю';
-</script>
-

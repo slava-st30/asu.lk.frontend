@@ -1,17 +1,14 @@
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink class="ml-2" to="/ui-kit">UI Kit</RouterLink>
-    </nav>
-  </header>
+  <div class="menu">
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink class="ml-2" to="/ui-kit">UI Kit</RouterLink>
+  </div>
   <RouterView />
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-</script>
 
+</script>
 
 <style scoped>
 

@@ -1,0 +1,96 @@
+.input__container {
+  .input__wrapper {
+    height: 48px;
+    min-width: 320px;
+    position: relative;
+
+    .input {
+      @apply border-additional-200;
+      border-radius: 12px;
+      border-width: 1px;
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      padding: 12px 16px 4px 16px;
+      outline: none !important;
+      outline-offset: 0 !important;
+      box-shadow: none !important;
+      transition: 
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        border-width 0.2s ease-in-out;
+
+      &:focus:not(.input--readonly):not(.input--disabled):not(.input--error) {
+        border-width: 1px;
+        @apply border-additional-100;
+
+        & + .input__label {
+          @apply text-xs-medium;
+          padding-left: 20px;
+          top: calc(-100% + 4px);
+        }
+      }
+
+      &.input--readonly {
+        border-radius: 0px;
+        border-width: 0px;
+        border-bottom-width: 1px;
+      }
+
+      &.input--disabled {
+        @apply bg-alternative-50;
+      }
+
+      &.input--error {
+        @apply border-negative;
+      }
+    }
+
+    .input__label {
+      position: relative;
+      width: 100%;
+      left: 0px;
+      padding-left: 16px;
+      top: calc(-100% + 12px);
+      transition: all 0.2s ease-in-out;
+      pointer-events: none;
+      @apply text-additional-200;
+
+      &.label--top {
+        @apply text-xs-medium;
+        padding-left: 20px;
+        top: calc(-100% + 4px);
+      }
+    }
+
+    .input__error {
+      @apply text-negative;
+      @apply text-sm-regular;
+      position: absolute;
+      top: calc(100%);
+      left: 16px;
+    }
+
+    &.wrapper--sm {
+      height: 40px;
+      @apply text-sm-regular;
+
+      .input:focus:not(.input--readonly):not(.input--disabled):not(.input--error) + .input__label,
+      .input__label.label--top,
+      .input__error {
+        @apply text-xs-regular;
+      }
+    }
+
+    &.wrapper--xs {
+      height: 32px;
+      @apply text-xs-regular;
+
+      .input:focus:not(.input--readonly):not(.input--disabled):not(.input--error) + .input__label,
+      .input__label.label--top,
+      .input__error {
+        @apply text-xxs-regular;
+      }
+    }
+  }
+}
