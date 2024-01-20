@@ -7,9 +7,11 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Input: typeof import('./src/components/Input.vue')['default']
+    Input: typeof import('./src/components/ui/Input.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Select: typeof import('./src/components/Select.vue')['default']
+    Select: typeof import('./src/components/ui/Select.vue')['default']
+    UiInput: typeof import('./src/components/ui/Input.vue')['default']
+    UiSelect: typeof import('./src/components/ui/Select.vue')['default']
   }
 }

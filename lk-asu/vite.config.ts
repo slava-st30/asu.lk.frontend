@@ -17,7 +17,7 @@ export default defineConfig({
       vueTemplate: true,
     }),
     components({
-      dirs: ['./src/components'],
+      dirs: ['./src/components/ui'],
       directoryAsNamespace: true,
       globalNamespaces: ['modals', 'tables'],
     }),
