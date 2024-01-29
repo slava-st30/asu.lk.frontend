@@ -1,6 +1,5 @@
 <template>
-  <div class="input__container">
-    <div
+  <div
       class="input__wrapper"
       :class="wrapperClasses"
     >
@@ -29,7 +28,6 @@
       >
         {{ error }}
       </div>
-    </div>
   </div>
 </template>
 

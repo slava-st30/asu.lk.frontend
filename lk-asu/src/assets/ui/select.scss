@@ -2,14 +2,9 @@
   &__wrapper {
     width: 100%;
     position: relative;
-    white-space: nowrap;
   }
 
   &__input {
-    width: 100%;
-    max-width: 100%;
-    text-overflow: ellipsis;
-
     .input:not(.input--disabled):not(.input--readonly) {
       cursor: pointer;
     }

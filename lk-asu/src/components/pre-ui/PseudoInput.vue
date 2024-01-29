@@ -1,30 +1,28 @@
 <template>
-  <div class="input__container">
+  <div
+    class="input__wrapper"
+    :class="wrapperClasses"
+  >
     <div
-      class="input__wrapper"
-      :class="wrapperClasses"
+      class="input"
+      :class="inputClasses"
     >
-      <div
-        class="input"
-        :class="inputClasses"
-      >
-        {{ value }} 
-      </div>
+      {{ value }} 
+    </div>
 
-      <div
-        v-if="label"
-        class="input__label"
-        :class="labelClasses"
-      >
-        {{ label }}
-      </div>
+    <div
+      v-if="label"
+      class="input__label"
+      :class="labelClasses"
+    >
+      {{ label }}
+    </div>
 
-      <div
-        v-if="error && (typeof error === 'string')"
-        class="input__error"
-      >
-        {{ error }}
-      </div>
+    <div
+      v-if="error && (typeof error === 'string')"
+      class="input__error"
+    >
+      {{ error }}
     </div>
   </div>
 </template>

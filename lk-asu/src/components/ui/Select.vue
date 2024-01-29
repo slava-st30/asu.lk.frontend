@@ -1,29 +1,27 @@
 <template>
-  <div class="select__container">
-    <div class="select__wrapper">
-      <PseudoInput
-        ref="input"
-        class="select__input"
-        :value="joinedSelectedValues"
-        :label="label"
-        :readonly="readonly"
-        :disabled="disabled"
-        :error="error"
-        :sm="sm"
-        :xs="xs"
-        @click="openDropdown"
-      />
-      
-      <Dropdown
-        v-if="isDropdownVisible"
-        ref="dropdown"
-        class="select__dropdown"
-        :model-value="modelValue"
-        :options="externalOptions"
-        @select="select"
-        @unselect="unselect"
-      />
-    </div>
+  <div class="select__wrapper">
+    <PseudoInput
+      ref="input"
+      class="select__input"
+      :value="joinedSelectedValues"
+      :label="label"
+      :readonly="readonly"
+      :disabled="disabled"
+      :error="error"
+      :sm="sm"
+      :xs="xs"
+      @click="openDropdown"
+    />
+    
+    <Dropdown
+      v-if="isDropdownVisible"
+      ref="dropdown"
+      class="select__dropdown"
+      :model-value="modelValue"
+      :options="externalOptions"
+      @select="select"
+      @unselect="unselect"
+    />
   </div>
 </template>
       
