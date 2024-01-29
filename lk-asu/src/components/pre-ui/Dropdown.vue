@@ -6,8 +6,9 @@
         :key="index"
         class="dropdown__item"
         :class="{
-          'selected': selectedIds.includes(option.id),
+          'selected': isSelected(option.id),
         }"
+        @click="select(option.id)"
       >
         {{ option.value }}
       </div>
@@ -17,14 +18,11 @@
 
 <script setup lang="ts">
 
-interface Option {
-  id: string | number;
-  value: string;
-}
+import type { Option } from '@/types';
 
 const props = withDefaults(defineProps<{
   options: any[];
-  selectedIds: (string | number)[];
+  modelValue: (string | number) | (string | number)[] | null;
   idProp?: string;
   valueProp?: string;
 }>(), {
@@ -32,12 +30,25 @@ const props = withDefaults(defineProps<{
   valueProp: 'value',
 });
 
-const externalOptions = computed((): Option[] => props.options.map((option) => ({ id: option[props.idProp], value: option[props.valueProp] })));
-
 const emit = defineEmits<{
   (evt: 'select', optionId: string | number): void;
   (evt: 'unselect', optionId: string | number): void;
 }>();
+
+const externalOptions = computed((): Option[] => props.options.map((option) => ({ id: option[props.idProp], value: option[props.valueProp] })));
+const selectedOptions = computed((): Option[] =>
+  Array.isArray(props.modelValue) ? props.modelValue.map((id) => externalOptions.value.find((option: Option) => id === option.id))
+  : props.modelValue === null ? []
+  : [ externalOptions.value.find((option: Option) => props.modelValue === option.id) ]
+);
+
+const isSelected = (id: string | number) => selectedOptions.value.map((option: Option) => option.id).includes(id);
+const select = (id: string | number) => {
+  if (isSelected(id)) 
+    emit('unselect', id);
+  else
+    emit('select', id);
+}
 
 </script>
 
@@ -60,6 +71,7 @@ const emit = defineEmits<{
       height: 38px;
       width: 100%;
       padding: 4px 8px;
+      @apply bg-white;
 
       & + .dropdown__item {
         border-top-width: 1px;
@@ -67,7 +79,7 @@ const emit = defineEmits<{
       }
 
       &.selected {
-        @apply bg-alternative-50;
+        @apply bg-attention-200;
       }
 
       &:hover {

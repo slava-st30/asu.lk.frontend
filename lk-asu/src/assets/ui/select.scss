@@ -1,0 +1,24 @@
+.select {
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 100%;
+    text-overflow: ellipsis;
+
+    .input:not(.input--disabled):not(.input--readonly) {
+      cursor: pointer;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    width: 100%;
+    margin-top: 2px;
+    z-index: 1;
+  }
+}

@@ -169,33 +169,179 @@
       </div>
     </div>
 
+    <div class="block selects">
+      <div class="col">
+        <Select
+          v-model="selected"
+          :options="mockOptions"
+          label="Options"
+          multi
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-4"
+          :options="mockOptions"
+          label="Options"
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-4"
+          :options="mockOptions"
+          label="Options"
+          readonly
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-4"
+          :options="mockOptions"
+          label="Options"
+          disabled
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-4"
+          :options="mockOptions"
+          label="Options"
+          error="Текст ошибки"
+        />
+      </div>
+
+      <div class="col">
+        <Select
+          v-model="selected"
+          class="mt-2"
+          :options="mockOptions"
+          label="Options"
+          multi
+          sm
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-6"
+          :options="mockOptions"
+          label="Options"
+          sm
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-6"
+          :options="mockOptions"
+          label="Options"
+          readonly
+          sm
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-6"
+          :options="mockOptions"
+          label="Options"
+          disabled
+          sm
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-6"
+          :options="mockOptions"
+          label="Options"
+          error="Текст ошибки"
+          sm
+        />
+      </div>
+
+      <div class="col">
+        <Select
+          v-model="selected"
+          class="mt-4"
+          :options="mockOptions"
+          label="Options"
+          multi
+          xs
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-8"
+          :options="mockOptions"
+          label="Options"
+          xs
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-8"
+          :options="mockOptions"
+          label="Options"
+          readonly
+          xs
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-8"
+          :options="mockOptions"
+          label="Options"
+          disabled
+          xs
+        />
+
+        <Select
+          v-model="selectedOne"
+          class="mt-8"
+          :options="mockOptions"
+          label="Options"
+          error="Текст ошибки"
+          xs
+        />
+      </div>
+    </div>
+
     <div class="block">
-      <Select
-        label="Фамилия Имя Отчество"
-        :options="mockOptions"
-        :selected-ids="[1, 2, 3]"
-        class="ml-2 w-60"
-      />
+      <div class="col">
+        asdasdasdasd
+      </div>
+
+      <div class="col">
+       
+      </div>
+
+      <div class="col">
+        
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 
+import PseudoInput from '@/components/pre-ui/PseudoInput.vue';
 import { mockOptions } from '../mock';
 
 const text = 'Съешь ещё этих мягких французских булок, да выпей чаю';
 const name = ref('Иванов Иван Иванович');
+const selected = ref([1, 2, 3]);
+const selectedOne = ref();
 
 </script>
 
 <style setup lang="scss">
 
   .kit {
+    margin-bottom: 200px;
+
     .block {
       display: flex;
       flex-direction: row;
-      margin-top: 20px;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid gray;
 
       .col {
         display: flex;
