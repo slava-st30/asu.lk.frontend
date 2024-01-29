@@ -10,7 +10,6 @@
         type="text"
         class="input"
         :class="inputClasses"
-        :label="label"
         :maxlength="maxlength"
         :readonly="readonly"
         :disabled="disabled"
@@ -84,7 +83,3 @@ const labelClasses = computed(() => ({
 }));
 
 </script>
-
-<style scoped lang="scss">
-
-</style>

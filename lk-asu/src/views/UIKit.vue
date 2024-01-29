@@ -168,10 +168,21 @@
         />
       </div>
     </div>
+
+    <div class="block">
+      <Select
+        label="Фамилия Имя Отчество"
+        :options="mockOptions"
+        :selected-ids="[1, 2, 3]"
+        class="ml-2 w-60"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
+import { mockOptions } from '../mock';
 
 const text = 'Съешь ещё этих мягких французских булок, да выпей чаю';
 const name = ref('Иванов Иван Иванович');
