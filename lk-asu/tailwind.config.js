@@ -90,7 +90,7 @@ module.exports = {
         '1.5px': '1.5px',
       },
       fontFamily: {
-        sans: ['Roboto Flex', ...defaultTheme.fontFamily.sans],
+        sans: [...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         '2xl-semibold': ['1.5rem', {

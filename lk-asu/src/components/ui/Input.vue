@@ -6,12 +6,13 @@
       <input
         v-model="externalValue"
         ref="input"
-        type="text"
         class="input"
         :class="inputClasses"
         :maxlength="maxlength"
         :readonly="readonly"
         :disabled="disabled"
+        :type="type"
+        @focus="emit('focus', $event)"
       />
 
       <div
@@ -42,6 +43,7 @@ const props = withDefaults(defineProps<{
   readonly?: boolean;
   disabled?: boolean;
   error?: string | boolean;
+  type?: string;
 }>(), {
   label: '',
   maxlength: 100,
@@ -50,10 +52,12 @@ const props = withDefaults(defineProps<{
   readonly: false,
   disabled: false,
   error: false,
+  type: 'text',
 });
 
 const emit = defineEmits<{
   (evt: 'update:model-value', newModelValue: string | number): void;
+  (evt: 'focus', event: Event): void;
 }>();
 
 const externalValue = computed({
