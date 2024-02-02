@@ -5,7 +5,9 @@
       'table__cell--no-wrap': noWrap,
     }"
   >
-    <slot>{{ content }}</slot>
+    <div class="inner">
+      <slot>{{ content }}</slot>
+    </div>
   </div>
 </template>
 
@@ -28,6 +30,7 @@ const props = withDefaults(defineProps<{
   align-items: center;
   padding: 8px 12px;
   min-height: 48px;
+  box-sizing: border-box;
 
   &:first-child {
     padding-left: 16px;
@@ -37,7 +40,7 @@ const props = withDefaults(defineProps<{
     padding-right: 16px;
   }
 
-  &--no-wrap {
+  &--no-wrap .inner {
     @apply truncate;
   }
 }

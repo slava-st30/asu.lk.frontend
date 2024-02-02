@@ -1,36 +1,21 @@
 <template>
   <div class="mt-4 text-lg-medium-uppercase">
     Добро пожаловать!
-
-    <Table
-      :header="mockTableData.header"
-      :items="mockTableData.content"
-    >
-      <template>
-        <div
-          v-for="{ label, content } in cells"
-          :key="label"
-          class="table__cell"
-          :content="content"
-        />
-      </template>
-    </Table>
   </div>
+
+  <Table
+    :headers="mockTableData.headers"
+    :items="mockTableData.content"
+  >
+    <template #default="{ item }">
+      <HomeTableRow :item="item" />
+    </template>
+  </Table>
 </template>
 
 <script setup lang="ts">
 
+import HomeTableRow from '../components/HomeTableRow.vue'
 import { mockTableData } from '@/mock';
-
-interface Profile {
-  familyName?: string;
-  name: string;
-  fatherName?: string;
-  birthDate?: string | Date;
-}
-
-const cells = [
-
-]
 
 </script>

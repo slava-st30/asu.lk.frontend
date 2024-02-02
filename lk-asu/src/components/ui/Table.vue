@@ -4,12 +4,10 @@
   >
     <div class="table__header">
       <div class="table__row">
-        <TableCell
-          v-for="({ key, title }, index) in headers"
-          :key="index"
-        >
-          {{ title }}
-        </TableCell>
+        <slot
+          name="default"
+          :item="headers"
+        />
       </div>
     </div>
 
@@ -19,7 +17,10 @@
         :key="index"
         class="table__row"
       >
-        <slot :item="item" />
+        <slot
+          name="default"  
+          :item="item"
+        />
       </div>
     </div>   
   </div>
@@ -29,7 +30,7 @@
 
 const props = withDefaults(defineProps<{
   items: any[];
-  headers: { key: string, title: string }[];
+  headers: any;
 }>(), {
   //
 });
@@ -42,17 +43,20 @@ const props = withDefaults(defineProps<{
   display: flex;
   flex-direction: column;
   position: relative;
+  width: fit-content;
 
   &__header {
     @apply text-sm-regular;
   }
 
   &__content {
-
+    //
   }
 
   &__row {
-    display: flex;;
+    display: flex;
+    border-bottom: 1px solid;
+    @apply border-additional-300;
   }
 }
 
