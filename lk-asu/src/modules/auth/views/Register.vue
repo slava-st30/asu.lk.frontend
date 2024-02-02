@@ -42,7 +42,7 @@
 <script setup lang="ts">
 
 import { register as registerRequest } from '../api';
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/modules/auth/store';
 
 const email = ref('');
 const password = ref('');

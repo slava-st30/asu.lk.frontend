@@ -38,7 +38,7 @@
 <script setup lang="ts">
 
 import { auth as authRequest } from '../api';
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/modules/auth/store';
 
 const email = ref('');
 const password = ref('');

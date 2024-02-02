@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue';
+import Home from '../modules/views/Home.vue';
 import { routes as authRoutes } from '../modules/auth/router';
 
 const router = createRouter({
@@ -13,7 +13,7 @@ const router = createRouter({
     {
       path: '/ui-kit',
       name: 'ui_kit',
-      component: () => import('../views/UIKit.vue'),
+      component: () => import('../modules/UIKit.vue'),
     },
     ...authRoutes,
   ]

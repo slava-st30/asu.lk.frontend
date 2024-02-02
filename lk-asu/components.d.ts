@@ -8,9 +8,15 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./src/components/ui/Button.vue')['default']
+    Checkbox: typeof import('./src/components/ui/Checkbox.vue')['default']
     Input: typeof import('./src/components/ui/Input.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Select: typeof import('./src/components/ui/Select.vue')['default']
+    Table: typeof import('./src/components/ui/Table.vue')['default']
+    TableCell: typeof import('./src/components/ui/TableCell.vue')['default']
+    TableHeader: typeof import('./src/components/ui/table/Header.vue')['default']
+    TableTable: typeof import('./src/components/ui/table/Table.vue')['default']
+    TableTableRow: typeof import('./src/components/ui/table/TableRow.vue')['default']
   }
 }

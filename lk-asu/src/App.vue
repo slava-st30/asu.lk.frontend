@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/modules/auth/store';
 
 const authStore = useAuth();
 

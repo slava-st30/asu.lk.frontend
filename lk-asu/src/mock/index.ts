@@ -21,3 +21,34 @@ export const mockOptions = [
   { id: 20, value: 'Option 20' },
   { id: 21, value: 'Option 21' },
 ];
+
+export const mockTableData = {
+  header: [
+    { key: 'familyName', title: 'Фамилия' },
+    { key: 'name', title: 'Имя' },
+    { key: 'fatherName', title: 'Отчество' },
+    { key: 'birthDate', title: 'Дата рождения' },
+  ],
+  content: [
+    { familyName: 'Иванов 1', name: 'Иван 1', fatherName: 'Иванович 1', birthDate: '01.01.2021', },
+    { familyName: 'Иванов 2', name: 'Иван 2', fatherName: 'Иванович 2', birthDate: '02.01.2021', },
+    { familyName: 'Иванов 3', name: 'Иван 3', fatherName: 'Иванович 3', birthDate: '03.01.2021', },
+    { familyName: 'Иванов 4', name: 'Иван 4', fatherName: 'Иванович 4', birthDate: '04.01.2021', },
+    { familyName: 'Иванов 5', name: 'Иван 5', fatherName: 'Иванович 5', birthDate: '05.01.2021', },
+    { familyName: 'Иванов 6', name: 'Иван 6', fatherName: 'Иванович 6', birthDate: '06.01.2021', },
+    { familyName: 'Иванов 7', name: 'Иван 7', fatherName: 'Иванович 7', birthDate: '07.01.2021', },
+    { familyName: 'Иванов 8', name: 'Иван 8', fatherName: 'Иванович 8', birthDate: '08.01.2021', },
+    { familyName: 'Иванов 9', name: 'Иван 9', fatherName: 'Иванович 9', birthDate: '09.01.2021', },
+    { familyName: 'Петров 0', name: 'Петр 0', fatherName: 'Петрович 0', birthDate: '00.01.2021', },
+    { familyName: 'Петров 1', name: 'Петр 1', fatherName: 'Петрович 1', birthDate: '01.01.2021', },
+    { familyName: 'Петров 2', name: 'Петр 2', fatherName: 'Петрович 2', birthDate: '02.01.2021', },
+    { familyName: 'Петров 3', name: 'Петр 3', fatherName: 'Петрович 3', birthDate: '03.01.2021', },
+    { familyName: 'Петров 4', name: 'Петр 4', fatherName: 'Петрович 4', birthDate: '04.01.2021', },
+    { familyName: 'Петров 5', name: 'Петр 5', fatherName: 'Петрович 5', birthDate: '05.01.2021', },
+    { familyName: 'Петров 6', name: 'Петр 6', fatherName: 'Петрович 6', birthDate: '06.01.2021', },
+    { familyName: 'Петров 7', name: 'Петр 7', fatherName: 'Петрович 7', birthDate: '07.01.2021', },
+    { familyName: 'Петров 8', name: 'Петр 8', fatherName: 'Петрович 8', birthDate: '08.01.2021', },
+    { familyName: 'Петров 9', name: 'Петр 9', fatherName: 'Петрович 9', birthDate: '09.01.2021', },
+    { familyName: 'Петров 0', name: 'Петр 0', fatherName: 'Петрович 0', birthDate: '00.01.2021', },
+  ],
+};
