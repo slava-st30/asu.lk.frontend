@@ -1,6 +1,17 @@
 <template>
   <TableCell
-    v-for="({ label, content }, index) in cells"
+    v-if="item && !headers"
+    class="item"
+  >
+    <RouterLink
+      :to="{ name: 'profile', params: { id: item.id } }"
+    >
+      {{ cells[0].content }}
+    </RouterLink>
+  </TableCell>
+
+  <TableCell
+    v-for="({ label, content }, index) in (headers ? cells : cells.slice(1))"
     :key="index"
     class="item"
   >
@@ -10,20 +21,24 @@
 
 <script setup lang="ts">
 
-import type { Profile } from '../types';
+import type { Profile } from '@modules/profile/types';
 
-const props = defineProps<{ item: Profile }>();
+const props = defineProps<{ item: Profile, headers?: any }>();
 
 const cells = computed(() => {
+  if (props.headers)
+    return Object.keys(props.headers).map((key) => ({ label: key, content: props.headers[key] }));
+
   const {
-    familyName, name, fatherName, birthDate,
+    familyName, name, fatherName, birthDate, department, about,
   } = props.item;
 
+  const fullName = [familyName, name, fatherName].join(' ');
+
   return [
-    { label: 'familyName', content: familyName },
-    { label: 'name', content: name },
-    { label: 'fatherName', content: fatherName },
-    { label: 'birthDate', content: birthDate?.split('-').reverse().join('.') },
+    { label: 'fullName', content: fullName },
+    { label: 'department', content: department },
+    { label: 'about', content: about },
   ];
 });
 
@@ -33,16 +48,13 @@ const cells = computed(() => {
 
 .item {
   &:nth-child(1) {
-    width: 164px;
+    width: 564px;
   }
   &:nth-child(2) {
-    width: 128px;
+    width: 272px;
   }
   &:nth-child(3) {
-    width: 180px;
-  }
-  &:nth-child(4) {
-    width: 120px;
+    width: 440px;
   }
 }
 

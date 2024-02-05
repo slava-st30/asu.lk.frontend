@@ -1,14 +1,17 @@
 <template>
   <div class="mt-4 text-lg-medium-uppercase">
-    Добро пожаловать!
+    Заголовок
   </div>
 
   <Table
     :headers="mockTableData.headers"
     :items="mockTableData.content"
   >
-    <template #default="{ item }">
-      <HomeTableRow :item="item" />
+    <template #default="{ item, headers }">
+      <HomeTableRow
+        :item="item"
+        :headers="headers"
+      />
     </template>
   </Table>
 </template>

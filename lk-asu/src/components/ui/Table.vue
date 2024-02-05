@@ -1,12 +1,10 @@
 <template>
-  <div
-    class="table"
-  >
+  <div class="table">
     <div class="table__header">
       <div class="table__row">
         <slot
           name="default"
-          :item="headers"
+          :headers="headers"
         />
       </div>
     </div>

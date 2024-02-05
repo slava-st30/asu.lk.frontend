@@ -35,3 +35,10 @@ html {
   outline-offset: 0 !important;
   box-shadow: none !important;
 }
+
+a {
+  @apply text-alternative;
+  &:hover {
+    text-decoration: underline;
+  }
+}

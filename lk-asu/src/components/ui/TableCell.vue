@@ -43,6 +43,14 @@ const props = withDefaults(defineProps<{
   &--no-wrap .inner {
     @apply truncate;
   }
+
+  .inner {
+    :deep() > *:empty::after,
+    &:empty::after {
+      content: '—';
+      display: inline-block;
+    }
+  }
 }
 
 </style>
